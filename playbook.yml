@@ -1,0 +1,12 @@
+---
+- name: Hello World Playbook
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Run hello world bash script
+      shell: echo "Hello World"
+      register: result
+    
+    - name: Display output
+      debug:
+        msg: "{{ result.stdout }}"
