@@ -2,6 +2,8 @@
 - name: Hello World Playbook
   hosts: localhost
   connection: local
+  vars:
+    file_content: "Hello from Ansible variable!"
   tasks:
     - name: Run hello world bash script
       shell: echo "Hello World"
@@ -10,3 +12,8 @@
     - name: Display output
       debug:
         msg: "{{ result.stdout }}"
+    
+    - name: Create hello.txt file with variable content
+      copy:
+        content: "{{ file_content }}"
+        dest: ~/hello.txt
