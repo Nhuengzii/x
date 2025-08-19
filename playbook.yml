@@ -1,7 +1,6 @@
 ---
 - name: Hello World Playbook
-  hosts: localhost
-  connection: local
+  hosts: all
   vars:
     file_content: "Hello from Ansible variable!"
   tasks:
